@@ -1,0 +1,55 @@
+name: studio-kit
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Lint (byte-compile + manifest validation)
+        run: make lint
+
+      - name: Unit tests
+        run: make test
+
+      - name: Build .rvpkg files
+        run: make packages
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sequence-rvpkgs
+          path: dist/*.rvpkg
+          if-no-files-found: error
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: sequence-rvpkgs
+          path: dist
+
+      - name: Create GitHub release with packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.rvpkg \
+            --title "Sequence RV kit $GITHUB_REF_NAME" \
+            --generate-notes

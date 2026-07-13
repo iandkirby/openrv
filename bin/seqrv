@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+# Copyright (c) 2026 The Sequence Group.
+# SPDX-License-Identifier: Apache-2.0
+#
+# seqrv — The Sequence Group launcher for (Open)RV.
+#
+#   seqrv [--show SHOW] [--dailies manifest.json] [--rv /path/to/rv] [rv args…]
+#
+# Exports the studio environment (SEQ_SHOW, SEQ_DAILIES_MANIFEST,
+# SEQ_KIT_ROOT, OCIO) and execs the real rv binary. Everything after the
+# recognised flags is passed straight through to rv.
+
+set -euo pipefail
+
+SELF="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# When bundled into a distribution, the kit root is not the bin dir's parent;
+# SEQ_KIT_ROOT can be pre-set by site config in that case.
+export SEQ_KIT_ROOT="${SEQ_KIT_ROOT:-$(dirname "$SELF")}"
+
+RV_BIN="${SEQ_RV_BIN:-}"
+PASS=()
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --show)
+            export SEQ_SHOW="$2"; shift 2 ;;
+        --dailies)
+            manifest="$2"
+            case "$manifest" in
+                /*) : ;;
+                *) manifest="$PWD/$manifest" ;;
+            esac
+            export SEQ_DAILIES_MANIFEST="$manifest"; shift 2 ;;
+        --rv)
+            RV_BIN="$2"; shift 2 ;;
+        -h|--help)
+            sed -n '5,12p' "${BASH_SOURCE[0]}"; exit 0 ;;
+        *)
+            PASS+=("$1"); shift ;;
+    esac
+done
+
+# Resolve a per-show OCIO config if the studio rules know one and the
+# environment does not already pin OCIO. (sequence_ocio does the same
+# resolution inside RV; doing it here also covers rvio and child processes.)
+if [ -z "${OCIO:-}" ] && [ -n "${SEQ_SHOW:-}" ]; then
+    rules="${SEQ_OCIO_RULES:-$SEQ_KIT_ROOT/configs/ocio_rules.json}"
+    if [ -f "$rules" ]; then
+        resolved="$(python3 - "$rules" "$SEQ_SHOW" <<'PYEOF' || true
+import json, os, re, sys
+rules_path, show = sys.argv[1], sys.argv[2]
+with open(rules_path) as fh:
+    rules = json.load(fh)
+configs = rules.get("config_by_show", {})
+path = configs.get(show) or configs.get("default") or ""
+path = re.sub(r"\$\{(\w+)\}", lambda m: os.environ.get(m.group(1), ""), path)
+if path and os.path.isfile(path):
+    print(path)
+PYEOF
+)"
+        if [ -n "$resolved" ]; then
+            export OCIO="$resolved"
+            echo "seqrv: OCIO=$OCIO" >&2
+        fi
+    fi
+fi
+
+# Find rv: --rv flag, $SEQ_RV_BIN, sibling binary (bundled layout), then PATH.
+if [ -z "$RV_BIN" ] && [ -x "$SELF/rv" ]; then RV_BIN="$SELF/rv"; fi
+if [ -z "$RV_BIN" ]; then RV_BIN="$(command -v rv || true)"; fi
+if [ -z "$RV_BIN" ]; then
+    echo "seqrv: cannot find an 'rv' binary (use --rv, SEQ_RV_BIN, or PATH)" >&2
+    exit 1
+fi
+
+exec "$RV_BIN" ${PASS[@]+"${PASS[@]}"}
