@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="200" viewBox="0 0 640 200" role="img" aria-label="The Sequence Group — Sequence RV">
+  <!-- Placeholder wordmark: swap for the real studio logo when supplied. -->
+  <rect width="640" height="200" fill="#101418"/>
+  <g fill="none" stroke="#5ac8fa" stroke-width="6" stroke-linecap="round">
+    <!-- Filmstrip/sequence motif: frames advancing -->
+    <rect x="42"  y="72" width="40" height="56" rx="6" opacity="0.35"/>
+    <rect x="94"  y="66" width="46" height="68" rx="6" opacity="0.65"/>
+    <rect x="152" y="60" width="52" height="80" rx="6"/>
+    <path d="M 168 84 L 192 100 L 168 116 Z" fill="#5ac8fa" stroke="none"/>
+  </g>
+  <g fill="#f3f5f7" font-family="Helvetica, Arial, sans-serif">
+    <text x="236" y="103" font-size="44" font-weight="700" letter-spacing="1">THE SEQUENCE GROUP</text>
+    <text x="238" y="140" font-size="22" letter-spacing="6" fill="#8a949e">SEQUENCE RV</text>
+  </g>
+</svg>
