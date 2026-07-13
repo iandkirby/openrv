@@ -1,0 +1,20 @@
+package: Sequence Notes
+author: The Sequence Group
+organization: The Sequence Group
+contact: software@thesequencegroup.com
+url: https://github.com/iandkirby/openrv
+version: 0.1.0
+rv: 1.0
+openrv: 1.0.0
+requires: ''
+optional: false
+system: false
+
+description: >
+  Dockable per-shot notes panel. Notes carry author, status, and timestamp,
+  persist inside the .rv session file, and export to JSON/CSV for downstream
+  tools. Toggle with alt+n. Part of The Sequence Group studio kit.
+
+modes:
+  - file: sequence_notes
+    load: immediate

@@ -1,0 +1,20 @@
+package: Sequence Dailies
+author: The Sequence Group
+organization: The Sequence Group
+contact: software@thesequencegroup.com
+url: https://github.com/iandkirby/openrv
+version: 0.1.0
+rv: 1.0
+openrv: 1.0.0
+requires: ''
+optional: false
+system: false
+
+description: >
+  Builds a dailies review session from a JSON manifest: one source per shot
+  with metadata, cut ranges, marked shot boundaries, and next/previous-shot
+  navigation. Part of The Sequence Group studio kit.
+
+modes:
+  - file: sequence_dailies
+    load: immediate

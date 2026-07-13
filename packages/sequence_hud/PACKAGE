@@ -1,0 +1,20 @@
+package: Sequence Shot HUD
+author: The Sequence Group
+organization: The Sequence Group
+contact: software@thesequencegroup.com
+url: https://github.com/iandkirby/openrv
+version: 0.1.0
+rv: 1.0
+openrv: 1.0.0
+requires: ''
+optional: false
+system: false
+
+description: >
+  Heads-up overlay showing the current shot, artist, status, and media name,
+  driven by the sequence_review metadata written by the Sequence Dailies
+  package. Toggle with alt+h. Part of The Sequence Group studio kit.
+
+modes:
+  - file: sequence_hud
+    load: immediate
