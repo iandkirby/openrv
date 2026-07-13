@@ -1,0 +1,19 @@
+{
+  "_comment": "The Sequence Group OCIO rules. config_by_show maps a show code to its OCIO config (${VARS} expand from the environment); file_rules assign an input colorspace by the first regex that matches the media path. Colorspace/display/view names must exist in the resolved OCIO config.",
+
+  "config_by_show": {
+    "default": "${SEQ_KIT_ROOT}/ocio/config.ocio"
+  },
+
+  "working_colorspace": "scene_linear",
+
+  "file_rules": [
+    { "pattern": "\\.exr$",          "colorspace": "linear" },
+    { "pattern": "\\.(dpx|cin)$",    "colorspace": "linear" },
+    { "pattern": "\\.(mov|mp4|mkv)$","colorspace": "sRGB" },
+    { "pattern": "\\.(png|jpe?g|tiff?)$", "colorspace": "sRGB" }
+  ],
+
+  "display": "sRGB",
+  "view": "Standard"
+}

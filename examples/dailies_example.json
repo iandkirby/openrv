@@ -1,0 +1,29 @@
+{
+  "show": "SHOWA",
+  "date": "2026-07-13",
+  "items": [
+    {
+      "shot": "sq010_sh0010",
+      "media": "/shows/SHOWA/sq010/sh0010/comp/sh0010_comp_v012.####.exr",
+      "range": [1001, 1048],
+      "artist": "rk",
+      "status": "wip",
+      "note": "grade tweak on fg"
+    },
+    {
+      "shot": "sq010_sh0020",
+      "media": "/shows/SHOWA/sq010/sh0020/comp/sh0020_comp_v007.####.exr",
+      "range": [1001, 1102],
+      "artist": "mv",
+      "status": "final-pending",
+      "note": ""
+    },
+    {
+      "shot": "sq020_sh0110",
+      "media": "/shows/SHOWA/sq020/sh0110/anim/sh0110_anim_v021.mov",
+      "artist": "jt",
+      "status": "blocking",
+      "note": "camera only — ignore lighting"
+    }
+  ]
+}

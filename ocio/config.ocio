@@ -1,0 +1,63 @@
+# The Sequence Group — placeholder OCIO config.
+#
+# This is a minimal, self-contained OCIO v2 config so the kit works out of
+# the box (linear EXRs + sRGB media on an sRGB display). It is NOT a
+# production color pipeline. For real shows, drop in an ACES config from
+# https://github.com/AcademySoftwareFoundation/OpenColorIO-Config-ACES
+# and point configs/ocio_rules.json at it per show.
+
+ocio_profile_version: 2
+
+name: sequence-placeholder
+description: The Sequence Group placeholder config — replace with a studio ACES config for production.
+
+environment: {}
+
+search_path: ""
+
+roles:
+  default: sRGB
+  scene_linear: linear
+  reference: linear
+  color_timing: linear
+  compositing_log: linear
+  data: raw
+
+file_rules:
+  - !<Rule> {name: exr, extension: exr, pattern: "*", colorspace: linear}
+  - !<Rule> {name: Default, colorspace: sRGB}
+
+displays:
+  sRGB:
+    - !<View> {name: Standard, colorspace: sRGB}
+    - !<View> {name: Raw, colorspace: raw}
+
+active_displays: [sRGB]
+active_views: [Standard, Raw]
+
+colorspaces:
+  - !<ColorSpace>
+    name: linear
+    family: scene
+    description: Scene-linear, Rec.709/sRGB primaries.
+    bitdepth: 32f
+    isdata: false
+    allocation: lg2
+    allocationvars: [-8, 5, 0.00390625]
+
+  - !<ColorSpace>
+    name: sRGB
+    family: display
+    description: sRGB encoded, Rec.709/sRGB primaries.
+    bitdepth: 8ui
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<ExponentWithLinearTransform> {gamma: [2.4, 2.4, 2.4, 1], offset: [0.055, 0.055, 0.055, 0], direction: inverse}
+
+  - !<ColorSpace>
+    name: raw
+    family: data
+    description: Untransformed data (mattes, motion vectors, depth).
+    bitdepth: 32f
+    isdata: true
+    allocation: uniform
