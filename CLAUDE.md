@@ -29,3 +29,9 @@ Upstream source is *not* vendored — `scripts/get_openrv.sh` clones it into
   with a `[sequence_<pkg>]` prefix; keep doing that — this code is written
   against documented OpenRV APIs but not continuously tested inside RV.
 - Qt: import PySide6 first, fall back to PySide2 (OpenRV moved Qt5→Qt6).
+- Studio build decisions of record (target platform: Windows; ffmpeg codec
+  opt-ins: h264/hevc/aac decode) live in `configs/build.env`, sourced by
+  `scripts/build_openrv.sh`. Change via reviewed commit only.
+- Launchers exist in pairs: bash (`bin/seqrv`) and Windows cmd
+  (`bin/seqrv.cmd`) — keep behavior in sync; shared OCIO resolution lives in
+  `scripts/resolve_ocio.py`.

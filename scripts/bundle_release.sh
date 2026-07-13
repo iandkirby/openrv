@@ -60,10 +60,22 @@ else
     echo "      can pre-install into the image with: rvpkg -install -add <support> ${PKGS[*]}"
 fi
 
+# Kit runtime data (studio configs, placeholder OCIO config, and the OCIO
+# resolver the launchers call) lives in <dist>/sequence — the launchers look
+# there first when deciding SEQ_KIT_ROOT.
+KIT_DEST="$STAGE/sequence"
+mkdir -p "$KIT_DEST/configs" "$KIT_DEST/ocio" "$KIT_DEST/scripts"
+cp -v "$ROOT/configs/ocio_rules.json" "$KIT_DEST/configs/"
+cp -v "$ROOT/ocio/config.ocio" "$KIT_DEST/ocio/"
+cp -v "$ROOT/scripts/resolve_ocio.py" "$KIT_DEST/scripts/"
+cp -v "$ROOT/packages/sequence_ocio/sequence_ocio_core.py" "$KIT_DEST/scripts/"
+
 # Launchers next to the rv binary when we can find it.
-RV_BIN_DIR="$(dirname "$(find "$STAGE" -maxdepth 4 -type f -name rv -perm -u+x | head -n1 || echo "")" 2>/dev/null || true)"
-if [ -n "$RV_BIN_DIR" ] && [ -d "$RV_BIN_DIR" ]; then
-    cp -v "$ROOT/bin/seqrv" "$ROOT/bin/seqrvio" "$RV_BIN_DIR/"
+RV_BIN="$(find "$STAGE" -maxdepth 4 -type f \( -name rv -o -name rv.exe \) | head -n1 || true)"
+if [ -n "$RV_BIN" ]; then
+    RV_BIN_DIR="$(dirname "$RV_BIN")"
+    cp -v "$ROOT/bin/seqrv" "$ROOT/bin/seqrvio" \
+          "$ROOT/bin/seqrv.cmd" "$ROOT/bin/seqrvio.cmd" "$RV_BIN_DIR/"
     chmod +x "$RV_BIN_DIR/seqrv" "$RV_BIN_DIR/seqrvio"
 fi
 

@@ -52,11 +52,11 @@ The result is a distributable `rv` + `rvio` with the Sequence kit inside.
 Platform prerequisites and the ffmpeg codec story (important — see below) are
 in [docs/building-openrv.md](docs/building-openrv.md).
 
-> **Codec caveat when leaving ShotGrid RV:** the commercial RV shipped with
-> licensed codecs. OpenRV builds ffmpeg with some non-free decoders/encoders
-> disabled by default. If your dailies rely on them, you must opt in at build
-> time (see `docs/building-openrv.md`) — enabling them is the studio's own
-> licensing call.
+> **Codecs:** the studio requirements — EXR, h.264, h.265 — are wired into
+> `configs/build.env`: EXR is core OpenRV, and the h.264/h.265/AAC *decoders*
+> (compiled out of upstream's ffmpeg by default) are opted back in on every
+> build. h.264/h.265 *encoding* from rvio is a separate licensing/build story
+> with a recommended two-step path — see `docs/building-openrv.md` §Codecs.
 
 ## Launching
 
@@ -65,9 +65,13 @@ bin/seqrv --show SHOWA --dailies /path/to/dailies_2026-07-13.json
 bin/seqrvio session.rv -o review.mov
 ```
 
+On Windows (the studio's target platform) the same launchers exist as
+`bin\seqrv.cmd` / `bin\seqrvio.cmd` for cmd/PowerShell; the bash versions
+work under MSYS2/Git Bash.
+
 `seqrv` exports `SEQ_SHOW`, `SEQ_DAILIES_MANIFEST`, `SEQ_KIT_ROOT`, resolves
 the show's OCIO config, and execs the real `rv` (found via `--rv`,
-`$SEQ_RV_BIN`, or `$PATH`).
+`$SEQ_RV_BIN`, a sibling binary in a bundled distribution, or `$PATH`).
 
 ## Dailies manifest
 
@@ -136,10 +140,11 @@ covered by real unit tests.
 
 ## Roadmap
 
+- [ ] First pinned Windows build + smoke-test pass (docs/building-openrv.md)
+- [ ] `seqrvio --transcode` wrapper for the two-step h.264/h.265 encode path
 - [ ] CI job that builds full OpenRV per platform (needs beefier runners)
 - [ ] Tracker-agnostic notes hand-off (JSON is already the interchange)
 - [ ] Streaming/remote-review recipe
-- [ ] Windows launcher scripts
 
 ---
 Contact: software@thesequencegroup.com · Licensed Apache-2.0 (same family as upstream OpenRV).
