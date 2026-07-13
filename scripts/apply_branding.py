@@ -30,6 +30,8 @@ RULES = (
     # (our asset, filename substrings to match, extensions to match)
     ("splash.png", ("splash",), (".png", ".jpg", ".jpeg", ".tif", ".tiff")),
     ("icon.png", ("rv.icon", "rv_icon", "openrv.icon"), (".png",)),
+    ("icon.ico", ("rv",), (".ico",)),
+    ("icon.icns", ("rv",), (".icns",)),
 )
 
 

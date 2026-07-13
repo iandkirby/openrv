@@ -23,6 +23,8 @@ upstream fixes are one `SEQ_OPENRV_TAG` bump away.
 | `packages/sequence_ocio` | Per-show OCIO config resolution and per-media colorspace assignment from `configs/ocio_rules.json`. |
 | `packages/sequence_branding` | Window title, About box, startup feedback — makes it *Sequence RV*. |
 | `bin/seqrv`, `bin/seqrvio` | Studio launchers: set show/OCIO/support-path environment, then exec `rv` / `rvio`. |
+| `branding/` | The Sequence circle wordmark as splash (shown on launch), `.ico`, `.icns` — applied to builds automatically. |
+| `installers/` + `scripts/make_installer_*` | Windows `Setup.exe` (Inno) and macOS `.dmg` builders — the downloadables. See [docs/installers.md](docs/installers.md). |
 | `scripts/` | Fetch upstream at a pinned tag, build, apply branding, build `.rvpkg`s, bundle a release. |
 
 ## Quickstart A — add the kit to an existing OpenRV install
@@ -140,7 +142,9 @@ covered by real unit tests.
 
 ## Roadmap
 
-- [ ] First pinned Windows build + smoke-test pass (docs/building-openrv.md)
+- [ ] First pinned Windows build + smoke-test pass (docs/building-openrv.md),
+      then `scripts\make_installer_windows.cmd` for the first Setup.exe
+- [ ] First macOS build + `scripts/make_installer_macos.sh` for the first DMG
 - [ ] `seqrvio --transcode` wrapper for the two-step h.264/h.265 encode path
 - [ ] CI job that builds full OpenRV per platform (needs beefier runners)
 - [ ] Tracker-agnostic notes hand-off (JSON is already the interchange)

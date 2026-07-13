@@ -28,14 +28,14 @@ if [ ! -d "$SRC" ]; then
     exit 1
 fi
 
-if [ "${SEQ_APPLY_BRANDING:-0}" = "1" ]; then
-    python3 "$ROOT/scripts/apply_branding.py" --openrv "$SRC" --yes
-fi
-
-# Studio build configuration of record (codec opt-ins, target platform).
+# Studio build configuration of record (codec opt-ins, branding, platform).
 if [ -f "$ROOT/configs/build.env" ]; then
     # shellcheck disable=SC1091
     . "$ROOT/configs/build.env"
+fi
+
+if [ "${SEQ_APPLY_BRANDING:-1}" = "1" ]; then
+    python3 "$ROOT/scripts/apply_branding.py" --openrv "$SRC" --yes
 fi
 
 # Legacy single knob: applies to both directions when the split vars are unset.

@@ -1,20 +1,39 @@
 # Branding assets
 
-Runtime branding (window title, About box, startup message) is handled by the
-`sequence_branding` package and needs nothing from this directory.
+The Sequence circle wordmark is the studio identity for Sequence RV.
 
-Compile-time branding is asset replacement in the upstream source tree,
-applied by `scripts/apply_branding.py` before building (or automatically with
-`SEQ_APPLY_BRANDING=1 scripts/build_openrv.sh`). Drop these files here:
+| File | What it is |
+| --- | --- |
+| `logo_master.png` | The supplied logo (RGBA, transparent outside the circle) — source of truth for the raster assets |
+| `logo.svg` | Vector recreation for print/docs (regenerate rasters after editing it) |
+| `icon.png` | 512px square app icon (replaces upstream PNG icons at build time) |
+| `splash.png` | Launch splash — dark field with the centered wordmark |
+| `icon.ico` | Windows icon (installer, shortcuts, exe) — 16→256px, PNG-compressed |
+| `icon.icns` | macOS bundle icon — 32→1024px, PNG-based |
 
-| File | Replaces | Recommended |
-| --- | --- | --- |
-| `splash.png` | upstream splash screen image(s) | match upstream's dimensions (check the file it's replacing — the script prints the paths and keeps `.orig` backups) |
-| `icon.png` | application icon image(s) | square PNG, largest upstream size |
+## Regenerating
 
-`logo.svg` is the studio wordmark source — export `splash.png`/`icon.png`
-from it at whatever sizes the pinned upstream release uses.
+Everything except the master and the SVG is generated:
 
-The script matches targets by filename pattern (`*splash*`, `*rv_icon*` etc.)
-rather than hard-coded paths, prints exactly what it will replace, and backs
-up originals as `<name>.orig`, so it is safe to re-run and easy to revert.
+```bash
+pip install pillow           # only needed for regeneration
+python3 scripts/make_brand_assets.py
+```
+
+To swap in a new/higher-resolution master (≥1024px will improve the large
+icon sizes — the current master is 270px, so 512/1024 variants are upscales,
+acceptable for this flat two-tone mark):
+
+```bash
+python3 scripts/make_brand_assets.py --source /path/to/new_logo.png
+```
+
+## Where the assets get used
+
+- **Build time** — `scripts/apply_branding.py` (on by default via
+  `configs/build.env`) replaces upstream splash/icon files in the OpenRV
+  source tree, so the compiled `rv` shows the Sequence splash on launch.
+- **Installers** — `installers/windows/sequence-rv.iss` embeds `icon.ico`;
+  `scripts/make_installer_macos.sh` swaps `icon.icns` into the app bundle.
+- **Runtime** — the `sequence_branding` package handles window title/About
+  independently, so even an unbranded build identifies itself.
