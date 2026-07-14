@@ -263,7 +263,12 @@ jobs:
           cache: true
 
       - name: Export QT_HOME for the OpenRV build
-        run: echo "QT_HOME=$QT_ROOT_DIR" >> "$GITHUB_ENV"
+        run: |
+          echo "QT_HOME=$QT_ROOT_DIR" >> "$GITHUB_ENV"
+          # Some dependency builds (AJA/ntv2 among them) look for the classic
+          # QTDIR variable rather than OpenRV's QT_HOME; an unset QTDIR shows
+          # up as an empty get_filename_component argument (run #9).
+          echo "QTDIR=$QT_ROOT_DIR" >> "$GITHUB_ENV"
 
       - name: Install build utilities
         run: |
@@ -320,8 +325,8 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
-      - name: Publish error summary to ci-logs branch on failure
-        if: failure()
+      - name: Publish error summary + recon to ci-logs branch
+        if: always()
         run: |
           mkdir -p _ci
           B=_external/OpenRV/_build
@@ -329,9 +334,21 @@ jobs:
           cp "$B/error_summary.txt" _ci/macos-error_summary.txt 2>/dev/null || true
           grep -n -B3 -A25 "CMake Error" "$B/build_errors.log" 2>/dev/null | head -200 > _ci/macos-cmake-errors.txt || true
           grep -n -B4 -A6 -E "error:|fatal error" "$B/build_errors.log" 2>/dev/null | head -300 > _ci/macos-compile-errors.txt || true
+          # Recon for the AJA configure failure: OpenRV's dependency recipe
+          # and the downloaded SDK's CMakeOptions.cmake (line ~54 is where
+          # run #9 died) — lets the exact fix be authored without API access.
+          for f in _external/OpenRV/cmake/dependencies/*.cmake; do
+            case "$(basename "$f" | tr 'A-Z' 'a-z')" in
+              *aja*|*ntv2*) cp "$f" "_ci/openrv-dep-$(basename "$f")" ;;
+            esac
+          done
+          AJA_OPT="$(find "$B" -path '*AJA*' -name 'CMakeOptions.cmake' 2>/dev/null | head -n1)"
+          if [ -n "$AJA_OPT" ]; then
+            sed -n '1,90p' "$AJA_OPT" > _ci/aja-CMakeOptions-head.txt
+          fi
           git config user.name "seq-ci"
           git config user.email "software@thesequencegroup.com"
           git checkout -B ci-logs
           git add -f _ci
-          git commit -m "macOS CI error logs (run ${GITHUB_RUN_NUMBER})" || exit 0
+          git commit -m "macOS CI logs+recon (run ${GITHUB_RUN_NUMBER}, ${{ job.status }})" || exit 0
           git push -f origin ci-logs
