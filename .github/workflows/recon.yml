@@ -1,0 +1,40 @@
+# Copyright (c) 2026 The Sequence Group.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Lightweight reconnaissance: fetch upstream OpenRV and publish its ffmpeg
+# dependency recipe (codec enable/disable mechanism) to the ci-logs branch.
+# Trigger by committing a change to .ci-recon.
+
+name: recon
+
+on:
+  push:
+    branches: ["claude/studio-sequence-openrv-3yxvsx"]
+    paths: [".ci-recon"]
+
+permissions:
+  contents: write
+
+jobs:
+  ffmpeg-recon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch upstream and extract ffmpeg codec mechanism
+        run: |
+          SEQ_OPENRV_TAG=v3.2.0 bash scripts/get_openrv.sh
+          mkdir -p _ci
+          find _external/OpenRV/cmake -iname '*ffmpeg*' -o -iname '*codec*' | tee _ci/ffmpeg-recon-index.txt
+          while IFS= read -r f; do
+            [ -f "$f" ] && cp "$f" "_ci/openrv-$(basename "$f")"
+          done < _ci/ffmpeg-recon-index.txt
+          grep -rn -i "non_free\|non-free\|nonfree\|enable-decoder\|disable-decoder\|enable-encoder\|disable-encoder\|hevc\|h264\|aac" \
+            _external/OpenRV/cmake 2>/dev/null | head -120 > _ci/ffmpeg-codec-grep.txt || true
+          git config user.name "seq-ci"
+          git config user.email "software@thesequencegroup.com"
+          git checkout -B ci-logs
+          git add -f _ci
+          git commit -m "ffmpeg codec recon (upstream v3.2.0)"
+          git push -f origin ci-logs
