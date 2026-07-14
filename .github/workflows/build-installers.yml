@@ -149,6 +149,19 @@ jobs:
           export PATH="$(cygpath -u "$pythonLocation"):$(cygpath -u "$USERPROFILE")/.cargo/bin:$PATH:/c/Strawberry/perl/bin"
           export ACLOCAL_PATH=/usr/share/aclocal
           export QT_HOME="$(cygpath -u "$QT_ROOT_DIR")"
+          # rvcmds.sh defaults to the "Visual Studio 17 2022" generator, but
+          # GitHub's windows-latest image ships only VS 2026 (v18). Match the
+          # generator to the installed VS; the -T v143,version=14.40 toolset
+          # pin still selects the exact compiler upstream requires (installed
+          # into the VS instance by the earlier step).
+          VSWHERE="/c/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
+          VS_MAJOR="$("$VSWHERE" -latest -products '*' -property installationVersion | cut -d. -f1 | tr -d '\r')"
+          case "$VS_MAJOR" in
+            18) export CMAKE_GENERATOR="Visual Studio 18 2026" ;;
+            17) export CMAKE_GENERATOR="Visual Studio 17 2022" ;;
+            *)  echo "warning: unrecognized VS major '$VS_MAJOR' — using rvcmds default generator" ;;
+          esac
+          echo "Using CMAKE_GENERATOR=${CMAKE_GENERATOR:-<rvcmds default>}"
           bash scripts/build_openrv.sh
 
       - name: Build studio packages and bundle the distribution
