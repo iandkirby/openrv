@@ -25,14 +25,24 @@ on:
         description: "Also build the macOS DMG"
         type: boolean
         default: false
+  # Push-based trigger: commit a change to .ci-trigger with '[ci-win]' and/or
+  # '[ci-mac]' in the commit message. Exists so builds can be started with
+  # plain git when API access is unavailable.
+  push:
+    branches: ["claude/studio-sequence-openrv-3yxvsx"]
+    paths: [".ci-trigger"]
 
+# contents: write so failed builds can publish their error summaries to the
+# ci-logs branch (diagnosable via plain git clone).
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   windows:
     name: Windows installer
-    if: ${{ inputs.build_windows }}
+    if: >-
+      ${{ (github.event_name == 'workflow_dispatch' && inputs.build_windows) ||
+          (github.event_name == 'push' && contains(github.event.head_commit.message, '[ci-win]')) }}
     # windows-2022, NOT windows-latest: the -latest image (windows-2025) ships
     # only Visual Studio 2026, which OpenRV's build chain does not support —
     # run #4 (Qt headers vs new STL in nested builds) and run #5 (CPython's
@@ -214,9 +224,24 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+      - name: Publish error summary to ci-logs branch on failure
+        if: failure()
+        run: |
+          mkdir -p _ci
+          tail -n 400 /d/OpenRV/_build/build_errors.log > _ci/windows-build-errors-tail.txt 2>/dev/null || true
+          cp /d/OpenRV/_build/error_summary.txt _ci/windows-error_summary.txt 2>/dev/null || true
+          git config user.name "seq-ci"
+          git config user.email "software@thesequencegroup.com"
+          git checkout -B ci-logs
+          git add -f _ci
+          git commit -m "Windows CI error logs (run ${GITHUB_RUN_NUMBER})" || exit 0
+          git push -f origin ci-logs
+
   macos:
     name: macOS installer
-    if: ${{ inputs.build_macos }}
+    if: >-
+      ${{ (github.event_name == 'workflow_dispatch' && inputs.build_macos) ||
+          (github.event_name == 'push' && contains(github.event.head_commit.message, '[ci-mac]')) }}
     runs-on: macos-latest
     timeout-minutes: 355
     steps:
@@ -291,3 +316,17 @@ jobs:
           path: dist/SequenceRV-*.dmg
           if-no-files-found: error
           retention-days: 30
+
+      - name: Publish error summary to ci-logs branch on failure
+        if: failure()
+        run: |
+          mkdir -p _ci
+          B=_external/OpenRV/_build
+          tail -n 400 "$B/build_errors.log" > _ci/macos-build-errors-tail.txt 2>/dev/null || true
+          cp "$B/error_summary.txt" _ci/macos-error_summary.txt 2>/dev/null || true
+          git config user.name "seq-ci"
+          git config user.email "software@thesequencegroup.com"
+          git checkout -B ci-logs
+          git add -f _ci
+          git commit -m "macOS CI error logs (run ${GITHUB_RUN_NUMBER})" || exit 0
+          git push -f origin ci-logs

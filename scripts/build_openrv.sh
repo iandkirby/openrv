@@ -58,6 +58,9 @@ fi
 cd "$SRC"
 
 export RV_VFX_PLATFORM="${RV_VFX_PLATFORM:-CY2024}"
+# CMake 4 refuses projects declaring cmake_minimum_required < 3.5, which some
+# of OpenRV's vendored dependencies still do; this is CMake's escape hatch.
+export CMAKE_POLICY_VERSION_MINIMUM="${CMAKE_POLICY_VERSION_MINIMUM:-3.5}"
 
 if [ -f "rvcmds.sh" ]; then
     echo "Building OpenRV via upstream rvcmds.sh (this takes a while)…"
