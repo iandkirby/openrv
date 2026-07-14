@@ -45,14 +45,22 @@ if [ -n "${SEQ_FFMPEG_NON_FREE:-}" ]; then
     SEQ_FFMPEG_NON_FREE_ENCODERS="${SEQ_FFMPEG_NON_FREE_ENCODERS:-$SEQ_FFMPEG_NON_FREE}"
 fi
 
-# Upstream's ffmpeg build reads these to re-enable non-free codecs.
-if [ -n "${SEQ_FFMPEG_NON_FREE_DECODERS:-}" ]; then
-    export RV_FFMPEG_NON_FREE_DECODERS_TO_ENABLE="$SEQ_FFMPEG_NON_FREE_DECODERS"
-    echo "Enabling non-free ffmpeg decoders: $SEQ_FFMPEG_NON_FREE_DECODERS"
+# Codec opt-ins are CMAKE LIST VARIABLES in upstream (verified against
+# v3.2.0: cmake/dependencies/ffmpeg.cmake re-enables ffmpeg-level decoders,
+# and src/lib/image/mio_ffmpeg/CMakeLists.txt turns each list entry into a
+# -D__FFMPEG_ENABLE_NON_FREE_DECODER_<name> compile definition that removes
+# the codec from RV's runtime disallow list — hevc lives behind that gate).
+# They are NOT environment variables; they must be passed as -D cache args,
+# semicolon-separated. Comma lists from build.env are converted here.
+export SEQ_CODEC_DECODERS_CMAKE="${SEQ_FFMPEG_NON_FREE_DECODERS//,/;}"
+export SEQ_CODEC_ENCODERS_CMAKE="${SEQ_FFMPEG_NON_FREE_ENCODERS//,/;}"
+# Keep MSYS2 from mangling the semicolon lists on Windows.
+export MSYS2_ARG_CONV_EXCL="${MSYS2_ARG_CONV_EXCL:--DRV_FFMPEG_NON_FREE}"
+if [ -n "$SEQ_CODEC_DECODERS_CMAKE" ]; then
+    echo "Non-free ffmpeg decoders to enable: $SEQ_CODEC_DECODERS_CMAKE"
 fi
-if [ -n "${SEQ_FFMPEG_NON_FREE_ENCODERS:-}" ]; then
-    export RV_FFMPEG_NON_FREE_ENCODERS_TO_ENABLE="$SEQ_FFMPEG_NON_FREE_ENCODERS"
-    echo "Enabling non-free ffmpeg encoders: $SEQ_FFMPEG_NON_FREE_ENCODERS"
+if [ -n "$SEQ_CODEC_ENCODERS_CMAKE" ]; then
+    echo "Non-free ffmpeg encoders to enable: $SEQ_CODEC_ENCODERS_CMAKE"
 fi
 
 cd "$SRC"
@@ -68,10 +76,21 @@ if [ -f "rvcmds.sh" ]; then
     # rvcmds.sh defines its build commands as aliases, which non-interactive
     # bash ignores unless expand_aliases is on; each command must also sit on
     # its own line so aliases resolve at parse time.
+    # Equivalent to upstream's rvbootstrap (rvsetup && rvcfg && rvbuild),
+    # with the studio codec cache variables appended between configure and
+    # build. Re-running cmake on the build dir with extra -D flags updates
+    # the cache and reconfigures.
     bash <<'RVEOF'
 shopt -s expand_aliases
 source ./rvcmds.sh
-rvbootstrap
+rvsetup
+rvcfg
+if [ -n "${SEQ_CODEC_DECODERS_CMAKE}${SEQ_CODEC_ENCODERS_CMAKE}" ]; then
+    cmake -B "${RV_BUILD_DIR}" \
+        -DRV_FFMPEG_NON_FREE_DECODERS_TO_ENABLE="${SEQ_CODEC_DECODERS_CMAKE}" \
+        -DRV_FFMPEG_NON_FREE_ENCODERS_TO_ENABLE="${SEQ_CODEC_ENCODERS_CMAKE}"
+fi
+rvbuild
 RVEOF
 else
     cat >&2 <<EOF
