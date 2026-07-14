@@ -309,7 +309,13 @@ jobs:
           fi
 
       - name: Build OpenRV (rv + rvio)
-        run: bash scripts/build_openrv.sh
+        run: |
+          # The AJA SDK's configure does get_filename_component on
+          # ${CMAKE_OSX_SYSROOT}, which is empty in nested configures on this
+          # image (runs #8-#10). CMake initializes it from $SDKROOT.
+          export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+          echo "SDKROOT=$SDKROOT"
+          bash scripts/build_openrv.sh
 
       - name: Bundle and build the DMG
         run: |
