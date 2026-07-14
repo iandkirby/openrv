@@ -242,7 +242,10 @@ jobs:
     if: >-
       ${{ (github.event_name == 'workflow_dispatch' && inputs.build_macos) ||
           (github.event_name == 'push' && contains(github.event.head_commit.message, '[ci-mac]')) }}
-    runs-on: macos-latest
+    # macos-15 (Xcode 16), NOT macos-latest: the latest image ships Xcode 26.5
+    # whose SDK breaks the PySide6 build (run #8) — same pattern as the
+    # windows-latest/VS2026 issue.
+    runs-on: macos-15
     timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
@@ -324,6 +327,8 @@ jobs:
           B=_external/OpenRV/_build
           tail -n 400 "$B/build_errors.log" > _ci/macos-build-errors-tail.txt 2>/dev/null || true
           cp "$B/error_summary.txt" _ci/macos-error_summary.txt 2>/dev/null || true
+          grep -n -B3 -A25 "CMake Error" "$B/build_errors.log" 2>/dev/null | head -200 > _ci/macos-cmake-errors.txt || true
+          grep -n -B4 -A6 -E "error:|fatal error" "$B/build_errors.log" 2>/dev/null | head -300 > _ci/macos-compile-errors.txt || true
           git config user.name "seq-ci"
           git config user.email "software@thesequencegroup.com"
           git checkout -B ci-logs
