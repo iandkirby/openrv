@@ -28,7 +28,12 @@ permissions:
 jobs:
   windows:
     name: Windows installer
-    runs-on: windows-latest
+    # windows-2022, NOT windows-latest: the -latest image (windows-2025) ships
+    # only Visual Studio 2026, which OpenRV's build chain does not support —
+    # run #4 (Qt headers vs new STL in nested builds) and run #5 (CPython's
+    # PCbuild finding no known toolset, MSB8020 v140) were both symptoms.
+    # windows-2022 provides the VS 2022 environment upstream targets.
+    runs-on: windows-2022
     timeout-minutes: 355
     env:
       # Short clone path at the drive root: upstream warns PySide compilation
