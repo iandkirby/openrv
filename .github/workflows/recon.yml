@@ -32,6 +32,14 @@ jobs:
           done < _ci/ffmpeg-recon-index.txt
           grep -rn -i "non_free\|non-free\|nonfree\|enable-decoder\|disable-decoder\|enable-encoder\|disable-encoder\|hevc\|h264\|aac" \
             _external/OpenRV/cmake 2>/dev/null | head -120 > _ci/ffmpeg-codec-grep.txt || true
+          # Round 2: where the base configure options come from, and whether
+          # the mio_ffmpeg plugin gates codecs at runtime.
+          grep -rn "RV_FFMPEG_COMMON_CONFIG_OPTIONS" _external/OpenRV/cmake 2>/dev/null | head -20 > _ci/ffmpeg-common-options-where.txt || true
+          COMMON_FILE="$(grep -rl "RV_FFMPEG_COMMON_CONFIG_OPTIONS" _external/OpenRV/cmake --include='*.cmake' | grep -v dependencies/ffmpeg.cmake | head -n1)"
+          [ -n "$COMMON_FILE" ] && cp "$COMMON_FILE" "_ci/openrv-common-$(basename "$COMMON_FILE")"
+          grep -rn -i "hevc\|h265\|codec.*allow\|allow.*codec\|blacklist\|whitelist" \
+            _external/OpenRV/src/plugins/mio_ffmpeg 2>/dev/null | head -80 > _ci/mio-ffmpeg-codec-gating.txt || true
+          find _external/OpenRV/src -type d -iname '*ffmpeg*' > _ci/ffmpeg-src-dirs.txt 2>/dev/null || true
           git config user.name "seq-ci"
           git config user.email "software@thesequencegroup.com"
           git checkout -B ci-logs
