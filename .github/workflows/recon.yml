@@ -37,8 +37,12 @@ jobs:
           grep -rn "RV_FFMPEG_COMMON_CONFIG_OPTIONS" _external/OpenRV/cmake 2>/dev/null | head -20 > _ci/ffmpeg-common-options-where.txt || true
           COMMON_FILE="$(grep -rl "RV_FFMPEG_COMMON_CONFIG_OPTIONS" _external/OpenRV/cmake --include='*.cmake' | grep -v dependencies/ffmpeg.cmake | head -n1)"
           [ -n "$COMMON_FILE" ] && cp "$COMMON_FILE" "_ci/openrv-common-$(basename "$COMMON_FILE")"
-          grep -rn -i "hevc\|h265\|codec.*allow\|allow.*codec\|blacklist\|whitelist" \
-            _external/OpenRV/src/plugins/mio_ffmpeg 2>/dev/null | head -80 > _ci/mio-ffmpeg-codec-gating.txt || true
+          grep -rn -i "hevc\|h265" \
+            _external/OpenRV/src/lib/image/MovieFFMpeg _external/OpenRV/src/lib/image/mio_ffmpeg \
+            2>/dev/null | head -60 > _ci/mio-ffmpeg-hevc-grep.txt || true
+          grep -rn -i "allowed\|whitelist\|blacklist\|codecIsAllowed\|supported.*codec\|codec.*supported" \
+            _external/OpenRV/src/lib/image/MovieFFMpeg _external/OpenRV/src/lib/image/mio_ffmpeg \
+            2>/dev/null | head -80 > _ci/mio-ffmpeg-allowlist-grep.txt || true
           find _external/OpenRV/src -type d -iname '*ffmpeg*' > _ci/ffmpeg-src-dirs.txt 2>/dev/null || true
           git config user.name "seq-ci"
           git config user.email "software@thesequencegroup.com"
