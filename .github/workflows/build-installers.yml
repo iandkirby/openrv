@@ -1,0 +1,214 @@
+# Copyright (c) 2026 The Sequence Group.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Builds the full Sequence RV distribution (rv + rvio + studio kit + branding)
+# on GitHub-hosted runners and uploads the platform installer as an artifact.
+#
+# Trigger manually (Actions tab -> build-installers -> Run workflow) or via
+# API. First runs double as reconnaissance: upstream's own build docs are
+# printed into the log so the recipe can be tuned per pinned release.
+
+name: build-installers
+
+on:
+  workflow_dispatch:
+    inputs:
+      openrv_tag:
+        description: "OpenRV ref to build ('latest' = newest release tag, or a tag/branch)"
+        required: false
+        default: "latest"
+      build_macos:
+        description: "Also build the macOS DMG"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    name: Windows installer
+    runs-on: windows-latest
+    timeout-minutes: 355
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up MSYS2 (build shell + utilities)
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          path-type: inherit
+          update: false
+          install: >-
+            git
+            make
+            patch
+            unzip
+            zip
+            bison
+            flex
+            nasm
+            autoconf
+            automake
+            libtool
+            mingw-w64-x86_64-cmake
+            mingw-w64-x86_64-meson
+            mingw-w64-x86_64-glew
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.5.3"
+          arch: "win64_msvc2019_64"
+          modules: "qtwebengine qtwebchannel qtwebsockets qtmultimedia qtpositioning"
+          cache: true
+
+      - name: Export QT_HOME for the OpenRV build
+        shell: pwsh
+        run: |
+          echo "QT_HOME=$env:QT_ROOT_DIR" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
+      - name: Resolve OpenRV ref and fetch source
+        env:
+          OPENRV_TAG_INPUT: ${{ inputs.openrv_tag }}
+        run: |
+          set -x
+          if [ "${OPENRV_TAG_INPUT:-latest}" = "latest" ]; then
+            TAG="$(git ls-remote --tags --refs https://github.com/AcademySoftwareFoundation/OpenRV.git 'v*' \
+                   | awk -F/ '{print $NF}' | sort -V | tail -n1)"
+          else
+            TAG="$OPENRV_TAG_INPUT"
+          fi
+          echo "Building OpenRV ref: $TAG"
+          echo "OPENRV_TAG=$TAG" >> "$GITHUB_ENV"
+          SEQ_OPENRV_TAG="$TAG" bash scripts/get_openrv.sh
+
+      - name: Recon — upstream build docs and entrypoints (read these in the log)
+        run: |
+          for f in \
+            _external/OpenRV/docs/build_system/config_windows.md \
+            _external/OpenRV/rvcmds.sh \
+            _external/OpenRV/requirements.txt \
+            _external/OpenRV/README.md
+          do
+            echo "::group::$f"
+            cat "$f" 2>/dev/null || echo "(not present at this ref)"
+            echo "::endgroup::"
+          done
+          echo "::group::disk space"
+          df -h || true
+          echo "::endgroup::"
+
+      - name: Install upstream Python requirements
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f _external/OpenRV/requirements.txt ]; then
+            python -m pip install -r _external/OpenRV/requirements.txt
+          fi
+
+      - name: Build OpenRV (rv + rvio) with Sequence branding and codecs
+        run: |
+          bash scripts/build_openrv.sh
+
+      - name: Build studio packages and bundle the distribution
+        run: |
+          make packages PY=python
+          bash scripts/bundle_release.sh
+
+      - name: Build the installer (Inno Setup)
+        shell: cmd
+        run: scripts\make_installer_windows.cmd
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SequenceRV-windows-installer
+          path: dist/SequenceRV-*-Setup.exe
+          if-no-files-found: error
+          retention-days: 30
+
+  macos:
+    name: macOS installer
+    if: ${{ inputs.build_macos }}
+    runs-on: macos-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.5.3"
+          modules: "qtwebengine qtwebchannel qtwebsockets qtmultimedia qtpositioning"
+          cache: true
+
+      - name: Export QT_HOME for the OpenRV build
+        run: echo "QT_HOME=$QT_ROOT_DIR" >> "$GITHUB_ENV"
+
+      - name: Install build utilities
+        run: |
+          brew install cmake ninja readline sqlite3 xz zlib tcl-tk autoconf \
+                       automake libtool python-setuptools nasm meson glew || true
+
+      - name: Resolve OpenRV ref and fetch source
+        env:
+          OPENRV_TAG_INPUT: ${{ inputs.openrv_tag }}
+        run: |
+          set -x
+          if [ "${OPENRV_TAG_INPUT:-latest}" = "latest" ]; then
+            TAG="$(git ls-remote --tags --refs https://github.com/AcademySoftwareFoundation/OpenRV.git 'v*' \
+                   | awk -F/ '{print $NF}' | sort -V | tail -n1)"
+          else
+            TAG="$OPENRV_TAG_INPUT"
+          fi
+          echo "OPENRV_TAG=$TAG" >> "$GITHUB_ENV"
+          SEQ_OPENRV_TAG="$TAG" bash scripts/get_openrv.sh
+
+      - name: Recon — upstream build docs (read these in the log)
+        run: |
+          for f in \
+            _external/OpenRV/docs/build_system/config_macos.md \
+            _external/OpenRV/rvcmds.sh \
+            _external/OpenRV/requirements.txt
+          do
+            echo "::group::$f"
+            cat "$f" 2>/dev/null || echo "(not present at this ref)"
+            echo "::endgroup::"
+          done
+
+      - name: Install upstream Python requirements
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f _external/OpenRV/requirements.txt ]; then
+            python -m pip install -r _external/OpenRV/requirements.txt
+          fi
+
+      - name: Build OpenRV (rv + rvio)
+        run: bash scripts/build_openrv.sh
+
+      - name: Bundle and build the DMG
+        run: |
+          make packages PY=python
+          bash scripts/bundle_release.sh
+          bash scripts/make_installer_macos.sh
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SequenceRV-macos-installer
+          path: dist/SequenceRV-*.dmg
+          if-no-files-found: error
+          retention-days: 30

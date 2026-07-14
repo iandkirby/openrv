@@ -34,8 +34,9 @@ if [ -f "$ROOT/configs/build.env" ]; then
     . "$ROOT/configs/build.env"
 fi
 
-if [ "${SEQ_APPLY_BRANDING:-1}" = "1" ]; then
-    python3 "$ROOT/scripts/apply_branding.py" --openrv "$SRC" --yes
+PYBIN="$(command -v python3 || command -v python || true)"
+if [ "${SEQ_APPLY_BRANDING:-1}" = "1" ] && [ -n "$PYBIN" ]; then
+    "$PYBIN" "$ROOT/scripts/apply_branding.py" --openrv "$SRC" --yes
 fi
 
 # Legacy single knob: applies to both directions when the split vars are unset.
