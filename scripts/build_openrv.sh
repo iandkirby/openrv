@@ -57,10 +57,19 @@ fi
 
 cd "$SRC"
 
+export RV_VFX_PLATFORM="${RV_VFX_PLATFORM:-CY2024}"
+
 if [ -f "rvcmds.sh" ]; then
     echo "Building OpenRV via upstream rvcmds.sh (this takes a while)…"
-    # shellcheck disable=SC1091
-    bash -c 'source ./rvcmds.sh && rvbootstrap'
+    echo "  RV_VFX_PLATFORM=$RV_VFX_PLATFORM  QT_HOME=${QT_HOME:-<unset, rvcmds will search>}"
+    # rvcmds.sh defines its build commands as aliases, which non-interactive
+    # bash ignores unless expand_aliases is on; each command must also sit on
+    # its own line so aliases resolve at parse time.
+    bash <<'RVEOF'
+shopt -s expand_aliases
+source ./rvcmds.sh
+rvbootstrap
+RVEOF
 else
     cat >&2 <<EOF
 error: $SRC/rvcmds.sh not found — the upstream build entrypoint moved.

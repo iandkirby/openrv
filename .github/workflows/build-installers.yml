@@ -30,40 +30,64 @@ jobs:
     name: Windows installer
     runs-on: windows-latest
     timeout-minutes: 355
+    env:
+      # Short clone path at the drive root: upstream warns PySide compilation
+      # fails from long paths (Windows 254-char limit).
+      SEQ_OPENRV_DIR_WIN: 'D:\OpenRV'
+      SEQ_OPENRV_DIR: '/d/OpenRV'
+      RV_VFX_PLATFORM: CY2024
     defaults:
       run:
         shell: msys2 {0}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up MSYS2 (build shell + utilities)
+      # Upstream pins the MSVC toolset: rvcmds.sh configures with
+      # "-T v143,version=14.40" (newer toolsets break the PySide build).
+      # Ensure that exact toolset exists on the runner's VS 2022.
+      - name: Ensure MSVC v143 14.40 toolset is installed
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vs = & $vswhere -latest -products * -property installationPath
+          Write-Host "VS at: $vs"
+          $have = Get-ChildItem "$vs\VC\Tools\MSVC" -Name | Where-Object { $_ -like '14.40.*' }
+          if ($have) { Write-Host "14.40 toolset already present: $have"; exit 0 }
+          $setup = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\setup.exe"
+          Start-Process -Wait -FilePath $setup -ArgumentList `
+            'modify', '--installPath', "`"$vs`"", `
+            '--add', 'Microsoft.VisualStudio.Component.VC.14.40.17.10.x86.x64', `
+            '--quiet', '--norestart', '--nocache'
+          Get-ChildItem "$vs\VC\Tools\MSVC" -Name
+
+      - name: Set up MSYS2 (utility shell — per upstream config_windows.md)
         uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
           path-type: inherit
           update: false
           install: >-
+            mingw-w64-x86_64-autotools
+            mingw-w64-x86_64-glew
+            mingw-w64-x86_64-libarchive
+            mingw-w64-x86_64-make
+            mingw-w64-x86_64-meson
+            mingw-w64-x86_64-toolchain
+            autoconf
+            automake
+            bison
+            flex
             git
-            make
+            libtool
+            nasm
+            p7zip
             patch
             unzip
             zip
-            bison
-            flex
-            nasm
-            autoconf
-            automake
-            libtool
-            mingw-w64-x86_64-cmake
-            mingw-w64-x86_64-meson
-            mingw-w64-x86_64-glew
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Set up Qt
+      # Qt BEFORE Python: install-qt-action drags in its own Python and
+      # clobbers pythonLocation (run #1 ended up on 3.12 because of this).
+      - name: Set up Qt 6.5.3 (VFX CY2024)
         uses: jurplel/install-qt-action@v4
         with:
           version: "6.5.3"
@@ -71,12 +95,22 @@ jobs:
           modules: "qtwebengine qtwebchannel qtwebsockets qtmultimedia qtpositioning"
           cache: true
 
-      - name: Export QT_HOME for the OpenRV build
+      - name: Set up Python 3.11 (VFX CY2024) + python3.exe shim
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Create python3.exe shim and jom (per upstream doc)
         shell: pwsh
         run: |
-          echo "QT_HOME=$env:QT_ROOT_DIR" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          Copy-Item "$env:pythonLocation\python.exe" "$env:pythonLocation\python3.exe" -Force
+          if (-not (Get-Command jom -ErrorAction SilentlyContinue)) { choco install jom -y --no-progress }
+          if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup -y --no-progress }
 
-      - name: Resolve OpenRV ref and fetch source
+      - name: Set up sccache (compile cache across attempts)
+        uses: mozilla-actions/sccache-action@v0.0.9
+
+      - name: Resolve OpenRV ref and fetch source (short path)
         env:
           OPENRV_TAG_INPUT: ${{ inputs.openrv_tag }}
         run: |
@@ -91,41 +125,39 @@ jobs:
           echo "OPENRV_TAG=$TAG" >> "$GITHUB_ENV"
           SEQ_OPENRV_TAG="$TAG" bash scripts/get_openrv.sh
 
-      - name: Recon — upstream build docs and entrypoints (read these in the log)
+      - name: Recon — upstream common-build doc (read in log if needed)
         run: |
-          for f in \
-            _external/OpenRV/docs/build_system/config_windows.md \
-            _external/OpenRV/rvcmds.sh \
-            _external/OpenRV/requirements.txt \
-            _external/OpenRV/README.md
-          do
+          for f in "$SEQ_OPENRV_DIR/docs/build_system/config_common_build.md"; do
             echo "::group::$f"
             cat "$f" 2>/dev/null || echo "(not present at this ref)"
             echo "::endgroup::"
           done
-          echo "::group::disk space"
-          df -h || true
+          echo "::group::tool versions"
+          for t in python python3 cmake perl rustc cargo sccache; do
+            printf '%-8s' "$t"; command -v "$t" && "$t" --version 2>/dev/null | head -n1 || echo "MISSING"
+          done
           echo "::endgroup::"
 
-      - name: Install upstream Python requirements
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f _external/OpenRV/requirements.txt ]; then
-            python -m pip install -r _external/OpenRV/requirements.txt
-          fi
-
       - name: Build OpenRV (rv + rvio) with Sequence branding and codecs
+        env:
+          SCCACHE_GHA_ENABLED: "true"
         run: |
+          # PATH order per upstream doc: Python (and cargo) ahead of
+          # mingw64/bin, Strawberry Perl last.
+          export PATH="$(cygpath -u "$pythonLocation"):$(cygpath -u "$USERPROFILE")/.cargo/bin:$PATH:/c/Strawberry/perl/bin"
+          export ACLOCAL_PATH=/usr/share/aclocal
+          export QT_HOME="$(cygpath -u "$QT_ROOT_DIR")"
           bash scripts/build_openrv.sh
 
       - name: Build studio packages and bundle the distribution
         run: |
+          export PATH="$(cygpath -u "$pythonLocation"):$PATH"
           make packages PY=python
-          bash scripts/bundle_release.sh
+          bash scripts/bundle_release.sh "$SEQ_OPENRV_DIR/_build/stage/app"
 
       - name: Build the installer (Inno Setup)
         shell: cmd
-        run: scripts\make_installer_windows.cmd
+        run: scripts\make_installer_windows.cmd %SEQ_OPENRV_DIR_WIN%\_build\stage\app
 
       - name: Upload installer artifact
         uses: actions/upload-artifact@v4
