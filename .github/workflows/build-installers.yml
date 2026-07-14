@@ -17,6 +17,10 @@ on:
         description: "OpenRV ref to build ('latest' = newest release tag, or a tag/branch)"
         required: false
         default: "latest"
+      build_windows:
+        description: "Build the Windows installer"
+        type: boolean
+        default: true
       build_macos:
         description: "Also build the macOS DMG"
         type: boolean
@@ -28,6 +32,7 @@ permissions:
 jobs:
   windows:
     name: Windows installer
+    if: ${{ inputs.build_windows }}
     # windows-2022, NOT windows-latest: the -latest image (windows-2025) ships
     # only Visual Studio 2026, which OpenRV's build chain does not support —
     # run #4 (Qt headers vs new STL in nested builds) and run #5 (CPython's
