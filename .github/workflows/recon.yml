@@ -44,6 +44,11 @@ jobs:
             _external/OpenRV/src/lib/image/MovieFFMpeg _external/OpenRV/src/lib/image/mio_ffmpeg \
             2>/dev/null | head -80 > _ci/mio-ffmpeg-allowlist-grep.txt || true
           find _external/OpenRV/src -type d -iname '*ffmpeg*' > _ci/ffmpeg-src-dirs.txt 2>/dev/null || true
+          # Round 4: the exact runtime disallow list and how the enable macro
+          # is wired from CMake.
+          sed -n '25,75p' _external/OpenRV/src/lib/image/mio_ffmpeg/init.cpp > _ci/mio-init-disallow-array.txt 2>/dev/null || true
+          grep -rn "__FFMPEG_ENABLE_NON_FREE" _external/OpenRV/src _external/OpenRV/cmake 2>/dev/null | head -30 > _ci/nonfree-macro-wiring.txt || true
+          cp _external/OpenRV/src/lib/image/mio_ffmpeg/CMakeLists.txt _ci/mio-ffmpeg-CMakeLists.txt 2>/dev/null || true
           git config user.name "seq-ci"
           git config user.email "software@thesequencegroup.com"
           git checkout -B ci-logs
