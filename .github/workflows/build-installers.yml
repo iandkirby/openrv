@@ -162,6 +162,17 @@ jobs:
             *)  echo "warning: unrecognized VS major '$VS_MAJOR' — using rvcmds default generator" ;;
           esac
           echo "Using CMAKE_GENERATOR=${CMAKE_GENERATOR:-<rvcmds default>}"
+          # Nested dependency builds (ExternalProject sub-cmakes) don't inherit
+          # the top-level -T/-A flags; without these env vars they compile with
+          # VS 2026's newest toolset, whose STL removed stdext:: — breaking
+          # Qt 6.5.3 headers (run #4: imgui vs qvarlengtharray.h). CMake reads
+          # these env vars for any configure that doesn't pass -T/-A explicitly.
+          export CMAKE_GENERATOR_TOOLSET="v143,version=14.40"
+          export CMAKE_GENERATOR_PLATFORM="x64"
+          # CMake 4 refuses projects declaring cmake_minimum_required < 3.5;
+          # some vendored dependency CMakeLists are that old. This env var is
+          # CMake 4's official escape hatch.
+          export CMAKE_POLICY_VERSION_MINIMUM=3.5
           bash scripts/build_openrv.sh
 
       - name: Build studio packages and bundle the distribution
@@ -181,6 +192,17 @@ jobs:
           path: dist/SequenceRV-*-Setup.exe
           if-no-files-found: error
           retention-days: 30
+
+      - name: Upload build error logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-build-error-logs
+          path: |
+            D:\OpenRV\_build\build_errors.log
+            D:\OpenRV\_build\error_summary.txt
+          if-no-files-found: ignore
+          retention-days: 7
 
   macos:
     name: macOS installer
