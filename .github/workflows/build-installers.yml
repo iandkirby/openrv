@@ -103,7 +103,9 @@ jobs:
       - name: Create python3.exe shim and jom (per upstream doc)
         shell: pwsh
         run: |
-          Copy-Item "$env:pythonLocation\python.exe" "$env:pythonLocation\python3.exe" -Force
+          if (-not (Test-Path "$env:pythonLocation\python3.exe")) {
+            Copy-Item "$env:pythonLocation\python.exe" "$env:pythonLocation\python3.exe"
+          }
           if (-not (Get-Command jom -ErrorAction SilentlyContinue)) { choco install jom -y --no-progress }
           if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup -y --no-progress }
 
