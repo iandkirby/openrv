@@ -1,9 +1,9 @@
 # Copyright (c) 2026 The Sequence Group.
 # SPDX-License-Identifier: Apache-2.0
 #
-# Lightweight reconnaissance: fetch upstream OpenRV and publish its ffmpeg
-# dependency recipe (codec enable/disable mechanism) to the ci-logs branch.
-# Trigger by committing a change to .ci-recon.
+# Lightweight reconnaissance against pinned upstream OpenRV source; results
+# publish to the ci-logs branch. Trigger by committing a change to .ci-recon.
+# Round 5: hardware decode (VideoToolbox / DXVA / CUDA) + decoder threading.
 
 name: recon
 
@@ -16,42 +16,40 @@ permissions:
   contents: write
 
 jobs:
-  ffmpeg-recon:
+  hwdecode-recon:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch upstream and extract ffmpeg codec mechanism
+      - name: Extract hardware-decode and threading wiring
         run: |
           SEQ_OPENRV_TAG=v3.2.0 bash scripts/get_openrv.sh
           mkdir -p _ci
-          find _external/OpenRV/cmake -iname '*ffmpeg*' -o -iname '*codec*' | tee _ci/ffmpeg-recon-index.txt
-          while IFS= read -r f; do
-            [ -f "$f" ] && cp "$f" "_ci/openrv-$(basename "$f")"
-          done < _ci/ffmpeg-recon-index.txt
-          grep -rn -i "non_free\|non-free\|nonfree\|enable-decoder\|disable-decoder\|enable-encoder\|disable-encoder\|hevc\|h264\|aac" \
-            _external/OpenRV/cmake 2>/dev/null | head -120 > _ci/ffmpeg-codec-grep.txt || true
-          # Round 2: where the base configure options come from, and whether
-          # the mio_ffmpeg plugin gates codecs at runtime.
-          grep -rn "RV_FFMPEG_COMMON_CONFIG_OPTIONS" _external/OpenRV/cmake 2>/dev/null | head -20 > _ci/ffmpeg-common-options-where.txt || true
-          COMMON_FILE="$(grep -rl "RV_FFMPEG_COMMON_CONFIG_OPTIONS" _external/OpenRV/cmake --include='*.cmake' | grep -v dependencies/ffmpeg.cmake | head -n1)"
-          [ -n "$COMMON_FILE" ] && cp "$COMMON_FILE" "_ci/openrv-common-$(basename "$COMMON_FILE")"
-          grep -rn -i "hevc\|h265" \
-            _external/OpenRV/src/lib/image/MovieFFMpeg _external/OpenRV/src/lib/image/mio_ffmpeg \
-            2>/dev/null | head -60 > _ci/mio-ffmpeg-hevc-grep.txt || true
-          grep -rn -i "allowed\|whitelist\|blacklist\|codecIsAllowed\|supported.*codec\|codec.*supported" \
-            _external/OpenRV/src/lib/image/MovieFFMpeg _external/OpenRV/src/lib/image/mio_ffmpeg \
-            2>/dev/null | head -80 > _ci/mio-ffmpeg-allowlist-grep.txt || true
-          find _external/OpenRV/src -type d -iname '*ffmpeg*' > _ci/ffmpeg-src-dirs.txt 2>/dev/null || true
-          # Round 4: the exact runtime disallow list and how the enable macro
-          # is wired from CMake.
-          sed -n '25,75p' _external/OpenRV/src/lib/image/mio_ffmpeg/init.cpp > _ci/mio-init-disallow-array.txt 2>/dev/null || true
-          grep -rn "__FFMPEG_ENABLE_NON_FREE" _external/OpenRV/src _external/OpenRV/cmake 2>/dev/null | head -30 > _ci/nonfree-macro-wiring.txt || true
-          cp _external/OpenRV/src/lib/image/mio_ffmpeg/CMakeLists.txt _ci/mio-ffmpeg-CMakeLists.txt 2>/dev/null || true
+          SRC=_external/OpenRV/src/lib/image
+          MFF=$SRC/MovieFFMpeg/MovieFFMpeg.cpp
+
+          # 1) Full mio_ffmpeg init.cpp — where codecThreads/bruteForce come from
+          cp $SRC/mio_ffmpeg/init.cpp _ci/mio-init-full.cpp || true
+
+          # 2) All hw-decode references with generous context
+          grep -n -i -B6 -A25 "videotoolbox\|hwaccel\|hw_device\|hwdevice\|d3d11\|dxva\|nvdec\|cuda\|hwframe" \
+            "$MFF" 2>/dev/null | head -400 > _ci/mff-hwdecode-context.txt || true
+
+          # 3) Threading: how thread_count is set
+          grep -n -B6 -A15 "thread_count\|codecThreads\|thread_type" \
+            "$MFF" $SRC/MovieFFMpeg/MovieFFMpeg/MovieFFMpeg.h 2>/dev/null | head -200 > _ci/mff-threads-context.txt || true
+
+          # 4) Environment variables / settings the plugin reads
+          grep -n -B2 -A8 "getenv\|Settings\|IOParameter" "$MFF" 2>/dev/null | head -250 > _ci/mff-settings-context.txt || true
+
+          # 5) Build-level hw options in ffmpeg.cmake
+          grep -n -B4 -A12 -i "videotoolbox\|hwaccel\|cuda\|nvenc\|nvdec\|d3d11\|dxva" \
+            _external/OpenRV/cmake/dependencies/ffmpeg.cmake 2>/dev/null | head -150 > _ci/ffmpeg-cmake-hw-context.txt || true
+
           git config user.name "seq-ci"
           git config user.email "software@thesequencegroup.com"
           git checkout -B ci-logs
           git add -f _ci
-          git commit -m "ffmpeg codec recon (upstream v3.2.0)"
+          git commit -m "hw-decode + threading recon (upstream v3.2.0)"
           git push -f origin ci-logs
