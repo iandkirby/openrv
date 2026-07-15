@@ -63,7 +63,43 @@ $PB -c 'Set :CFBundleDisplayName "Sequence RV"' "$PLIST" 2>/dev/null \
 # deployment over a file share or MDM this is typically fine).
 IDENTITY="${SEQ_CODESIGN_ID:--}"
 echo "Codesigning with identity: $IDENTITY"
-codesign --force --deep --sign "$IDENTITY" "$APP"
+
+if [ "$IDENTITY" = "-" ]; then
+    # Ad-hoc: no runtime hardening (can't be notarized, and doesn't need to be).
+    codesign --force --deep --sign "-" "$APP"
+else
+    # Developer ID path — sign for notarization. This needs, in order:
+    #   --options runtime : the hardened runtime notarization requires
+    #   --timestamp       : a secure Apple timestamp (notarization rejects
+    #                       signatures without one)
+    #   --entitlements    : the hardened-runtime carve-outs RV needs to load
+    #                       its unsigned plugins and run embedded CPython
+    # --deep is deprecated and signs nested code inside-out unreliably, so we
+    # sign every nested Mach-O bottom-up ourselves, then the outer bundle last.
+    ENTITLEMENTS="$ROOT/branding/entitlements.plist"
+    if [ ! -f "$ENTITLEMENTS" ]; then
+        echo "error: $ENTITLEMENTS missing (needed for hardened-runtime signing)" >&2
+        exit 1
+    fi
+    SIGN=(codesign --force --timestamp --options runtime \
+                   --entitlements "$ENTITLEMENTS" --sign "$IDENTITY")
+
+    echo "Signing nested code (frameworks, dylibs, helper binaries) bottom-up…"
+    # Frameworks and loadable bundles first.
+    while IFS= read -r -d '' item; do
+        "${SIGN[@]}" "$item"
+    done < <(find "$APP/Contents" \( -name '*.framework' -o -name '*.dylib' \
+                    -o -name '*.so' -o -name '*.bundle' \) -print0)
+    # Any remaining Mach-O executables (helper tools, python, rvio, etc.).
+    while IFS= read -r -d '' f; do
+        if file "$f" | grep -q 'Mach-O'; then "${SIGN[@]}" "$f" || true; fi
+    done < <(find "$APP/Contents/MacOS" -type f -print0)
+    # Outer bundle last so its seal covers everything inside.
+    "${SIGN[@]}" "$APP"
+
+    echo "Verifying signature…"
+    codesign --verify --deep --strict --verbose=2 "$APP"
+fi
 
 mkdir -p "$ROOT/dist"
 DMG="$ROOT/dist/SequenceRV-$VERSION.dmg"
