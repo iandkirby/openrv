@@ -63,5 +63,55 @@ class PatchHwDecodeTests(unittest.TestCase):
             patch_openrv.patch_hw_decode(root)
 
 
+# Mirrors the relevant upstream structure at OpenRV v3.2.0: the two adjacent
+# lines in decodeImageAtFrame's planar branch that the NV12 fix wedges between.
+NV12_SNIPPET = """\
+            if (isPlanar && !isRGB)
+            {
+                convertFormat = (bitSize != 8);
+                numPlanes = av_pix_fmt_count_planes(nativeFormat);
+                int log2w, log2h;
+            }
+"""
+
+
+class PatchNv12SemiplanarTests(unittest.TestCase):
+    def _make_tree(self, content):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        target = Path(tmp.name) / patch_openrv.MFF
+        target.parent.mkdir(parents=True)
+        target.write_text(content)
+        return tmp.name, target
+
+    def test_patches_nv12_snippet(self):
+        root, target = self._make_tree(NV12_SNIPPET)
+        self.assertEqual(patch_openrv.patch_nv12_semiplanar(root), "patched")
+        text = target.read_text()
+        # Marker inserted exactly once; conversion forced exactly once.
+        self.assertEqual(text.count(patch_openrv.NV12_ALREADY), 1)
+        self.assertEqual(text.count("                        convertFormat = true;"), 1)
+        # numPlanes line survives and now trails the inserted block.
+        self.assertIn(
+            "                numPlanes = av_pix_fmt_count_planes(nativeFormat);", text
+        )
+        # Self-contained insert keeps braces balanced.
+        self.assertEqual(text.count("{"), text.count("}"))
+        # Anchor no longer matches (the two lines are now separated).
+        self.assertIsNone(patch_openrv.NV12_ANCHOR.search(text))
+
+    def test_idempotent(self):
+        root, target = self._make_tree(NV12_SNIPPET)
+        patch_openrv.patch_nv12_semiplanar(root)
+        first = target.read_text()
+        self.assertEqual(patch_openrv.patch_nv12_semiplanar(root), "already")
+        self.assertEqual(target.read_text(), first)
+
+    def test_fails_loudly_when_upstream_moves(self):
+        root, _ = self._make_tree("totally different code\n")
+        with self.assertRaises(RuntimeError):
+            patch_openrv.patch_nv12_semiplanar(root)
+
+
 if __name__ == "__main__":
     unittest.main()
