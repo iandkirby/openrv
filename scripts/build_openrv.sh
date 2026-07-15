@@ -39,6 +39,12 @@ if [ "${SEQ_APPLY_BRANDING:-1}" = "1" ] && [ -n "$PYBIN" ]; then
     "$PYBIN" "$ROOT/scripts/apply_branding.py" --openrv "$SRC" --yes
 fi
 
+# Studio source patches (anchored, fail-loud on upstream drift): currently
+# extends VideoToolbox hardware decode to HEVC/H.264 on macOS.
+if [ "${SEQ_APPLY_SOURCE_PATCHES:-1}" = "1" ] && [ -n "$PYBIN" ]; then
+    "$PYBIN" "$ROOT/scripts/patch_openrv.py" --openrv "$SRC"
+fi
+
 # Legacy single knob: applies to both directions when the split vars are unset.
 if [ -n "${SEQ_FFMPEG_NON_FREE:-}" ]; then
     SEQ_FFMPEG_NON_FREE_DECODERS="${SEQ_FFMPEG_NON_FREE_DECODERS:-$SEQ_FFMPEG_NON_FREE}"
