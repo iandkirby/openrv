@@ -386,27 +386,27 @@ jobs:
       - name: Notarize and staple the DMG
         if: steps.signing.outputs.signed == 'true'
         env:
-          MACOS_NOTARY_KEY_P8_BASE64: ${{ secrets.MACOS_NOTARY_KEY_P8_BASE64 }}
-          MACOS_NOTARY_KEY_ID: ${{ secrets.MACOS_NOTARY_KEY_ID }}
-          MACOS_NOTARY_ISSUER_ID: ${{ secrets.MACOS_NOTARY_ISSUER_ID }}
+          # App-specific password auth (simpler than an App Store Connect API
+          # key): create the password at appleid.apple.com. All three secrets
+          # are set by scripts/push_signing_secrets.sh.
+          MACOS_NOTARY_APPLE_ID: ${{ secrets.MACOS_NOTARY_APPLE_ID }}
+          MACOS_NOTARY_APP_PW: ${{ secrets.MACOS_NOTARY_APP_PW }}
+          MACOS_NOTARY_TEAM_ID: ${{ secrets.MACOS_NOTARY_TEAM_ID }}
         run: |
           set -euo pipefail
-          if [ -z "${MACOS_NOTARY_KEY_P8_BASE64:-}" ]; then
-            echo "::warning::App is Developer ID signed but no notary key secret set — skipping notarization."
+          if [ -z "${MACOS_NOTARY_APP_PW:-}" ]; then
+            echo "::warning::App is Developer ID signed but no notary password secret set — skipping notarization."
             exit 0
           fi
           DMG="$(ls dist/SequenceRV-*.dmg | head -n1)"
           echo "Notarizing $DMG"
-          KEY_P8="$RUNNER_TEMP/notary_key.p8"
-          echo "$MACOS_NOTARY_KEY_P8_BASE64" | base64 --decode > "$KEY_P8"
           # --wait blocks until Apple finishes (usually 1-5 min); non-zero exit
           # on 'Invalid' so a rejected build fails the job loudly.
           xcrun notarytool submit "$DMG" \
-                --key "$KEY_P8" \
-                --key-id "$MACOS_NOTARY_KEY_ID" \
-                --issuer "$MACOS_NOTARY_ISSUER_ID" \
+                --apple-id "$MACOS_NOTARY_APPLE_ID" \
+                --password "$MACOS_NOTARY_APP_PW" \
+                --team-id "$MACOS_NOTARY_TEAM_ID" \
                 --wait
-          rm -f "$KEY_P8"
           # Staple the ticket into the DMG so first launch works without a
           # network round-trip to Apple.
           xcrun stapler staple "$DMG"
