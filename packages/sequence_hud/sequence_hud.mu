@@ -38,11 +38,14 @@ class: SequenceHUDMinorMode : MinorMode
         }
         catch (...)
         {
+            ;
         }
         return dflt;
     }
 
-    method: toggle (void; Event event)
+    // named toggleHUD, NOT toggle: rvtypes.Mode.toggle(void;) is RV's own
+    // activate/deactivate hook — shadowing it crashes RV's mode teardown on quit
+    method: toggleHUD (void; Event event)
     {
         _visible = !_visible;
         redraw();
@@ -73,11 +76,12 @@ class: SequenceHUDMinorMode : MinorMode
         string media = "";
         try
         {
-            let mlist = sourceMedia(src);
+            let mlist = getStringProperty(src + ".media.movie");
             if (mlist.size() > 0) media = mlist[0];
         }
         catch (...)
         {
+            ;
         }
 
         if (media != "")
@@ -93,6 +97,7 @@ class: SequenceHUDMinorMode : MinorMode
         }
         catch (...)
         {
+            ;
         }
 
         let shot   = propOr("%s.sequence_review.shot" % group, fallbackName),
@@ -132,11 +137,11 @@ class: SequenceHUDMinorMode : MinorMode
         _visible = true;
 
         init("sequence-hud",
-             [ ("key-down--alt--h", toggle, "Toggle Sequence shot HUD") ],
+             [ ("key-down--alt--h", toggleHUD, "Toggle Sequence shot HUD") ],
              nil,
              Menu {
                  {"Sequence", Menu {
-                     {"Shot HUD", toggle, nil, hudState}
+                     {"Shot HUD", toggleHUD, nil, hudState}
                  }}
              });
     }
