@@ -1,0 +1,400 @@
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\pub\cv\cv.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\shared_libraries.vcxproj" (default target) (173) ->
+       "D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj" (default target) (190) ->
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(123,28): warning C4477: 'printf' : format string '%p' requires an argument of type 'void *', but variadic argument 1 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(182,29): warning C4477: 'fprintf' : format string '%p' requires an argument of type 'void *', but variadic argument 4 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(182,29): warning C4477: 'fprintf' : format string '%lu' requires an argument of type 'unsigned long', but variadic argument 6 has type 'unsigned __int64' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(288,20): warning C4477: 'printf' : format string '%p' requires an argument of type 'void *', but variadic argument 1 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(298,20): warning C4477: 'printf' : format string '%p' requires an argument of type 'void *', but variadic argument 1 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(308,20): warning C4477: 'printf' : format string '%p' requires an argument of type 'void *', but variadic argument 1 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(318,20): warning C4477: 'printf' : format string '%p' requires an argument of type 'void *', but variadic argument 1 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(328,20): warning C4477: 'printf' : format string '%p' requires an argument of type 'void *', but variadic argument 1 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(371,24): warning C4477: 'printf' : format string '%p' requires an argument of type 'void *', but variadic argument 1 has type 'pthread_t' [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(664,21): warning C4312: 'type cast': conversion from 'unsigned int' to 'stl_ext::thread_group::thread_function' of greater size [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(710,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'stl_ext::thread_group::thread_function' of greater size [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+         D:\OpenRV\src\lib\base\stl_ext\thread_group.cpp(800,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'stl_ext::thread_group::thread_function' of greater size [D:\OpenRV\_build\src\lib\base\stl_ext\stl_ext.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\compiled_python_source_modules.vcxproj" (default target) (22) ->
+       "D:\OpenRV\_build\src\bin\python\py-interp\pyc_generation.vcxproj" (default target) (23) ->
+       "D:\OpenRV\_build\installed_packages.vcxproj" (default target) (24) ->
+       "D:\OpenRV\_build\src\bin\apps\rvpkg\rvinstall.vcxproj" (default target) (25) ->
+       "D:\OpenRV\_build\src\bin\apps\rvpkg\rvpkg.vcxproj" (default target) (70) ->
+       "D:\OpenRV\_build\src\pub\arg\arg.vcxproj" (default target) (245) ->
+         D:\OpenRV\src\pub\arg\arg.c(199,27): warning C4311: 'type cast': pointer truncation from 'unsigned char *' to 'long' [D:\OpenRV\_build\src\pub\arg\arg.vcxproj]
+         D:\OpenRV\src\pub\arg\arg.c(270,19): warning C4311: 'type cast': pointer truncation from 'unsigned char *' to 'long' [D:\OpenRV\_build\src\pub\arg\arg.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\makeFBIOformats\makeFBIOformats.vcxproj" (default target) (118) ->
+       "D:\OpenRV\_build\mu_plugins.vcxproj" (default target) (141) ->
+       "D:\OpenRV\_build\src\lib\mu\mu_test\mu_test.vcxproj" (default target) (153) ->
+       "D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj" (default target) (200) ->
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\xutility(4711,22): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\xutility(4711,22): warning C4267:         with [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\xutility(4711,22): warning C4267:         [ [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\xutility(4711,22): warning C4267:             _Ty=int [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\xutility(4711,22): warning C4267:         ] [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+         D:\OpenRV\src\lib\mu\Mu\Thread.cpp(153,31): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+         D:\OpenRV\src\lib\mu\Mu\ClassInstance.cpp(134,20): warning C4311: 'type cast': pointer truncation from 'const Mu::Class *' to 'unsigned long' [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+         D:\OpenRV\src\lib\mu\Mu\VariantInstance.cpp(86,20): warning C4311: 'type cast': pointer truncation from 'const Mu::VariantTagType *' to 'unsigned long' [D:\OpenRV\_build\src\lib\mu\Mu\Mu.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\shared_libraries.vcxproj" (default target) (173) ->
+       "D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj" (default target) (179) ->
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(108,22): warning C4311: 'type cast': pointer truncation from 'HANDLE' to 'long' [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(111,14): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(118,50): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(118,25): warning C4311: 'type cast': pointer truncation from 'HANDLE' to 'long' [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(120,32): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(122,29): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(126,44): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(130,29): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(139,27): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(141,29): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(145,25): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(155,32): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\FileMMap.cpp(156,29): warning C4312: 'type cast': conversion from 'long' to 'HANDLE' of greater size [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+         D:\OpenRV\src\lib\base\TwkUtil\File.cpp(736,22): warning C4311: 'type cast': pointer truncation from 'HINSTANCE' to 'int' [D:\OpenRV\_build\src\lib\base\TwkUtil\TwkUtil.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\makeFBIOformats\makeFBIOformats.vcxproj" (default target) (118) ->
+       "D:\OpenRV\_build\mu_plugins.vcxproj" (default target) (141) ->
+       "D:\OpenRV\_build\src\lib\mu\mu_test\mu_test.vcxproj" (default target) (153) ->
+       "D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj" (default target) (202) ->
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:         with [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:         [ [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:             _Ty=int [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:         ] [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\MuLangContext.cpp(224,31): warning C4477: 'sprintf' : format string '%ld' requires an argument of type 'long', but variadic argument 1 has type 'const size_t' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(565,17): warning C4311: 'reinterpret_cast': pointer truncation from 'Mu::Value *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(567,21): warning C4311: 'reinterpret_cast': pointer truncation from 'Mu::Vector4f *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(568,21): warning C4311: 'reinterpret_cast': pointer truncation from 'Mu::Vector3f *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(569,21): warning C4311: 'reinterpret_cast': pointer truncation from 'Mu::Vector2f *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(570,21): warning C4311: 'reinterpret_cast': pointer truncation from 'float *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(571,21): warning C4311: 'reinterpret_cast': pointer truncation from 'int *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(572,21): warning C4311: 'reinterpret_cast': pointer truncation from 'bool *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(573,21): warning C4311: 'reinterpret_cast': pointer truncation from 'Mu::Pointer *' to 'Mu::RuntimeModule::layout_traits::ul' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+         D:\OpenRV\src\lib\mu\MuLang\RuntimeModule.cpp(632,21): warning C4311: 'type cast': pointer truncation from 'Mu::Thread::StackPointer' to 'long' [D:\OpenRV\_build\src\lib\mu\MuLang\MuLang.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\shared_libraries.vcxproj" (default target) (173) ->
+       "D:\OpenRV\_build\src\lib\image\TwkFB\TwkFB.vcxproj" (default target) (176) ->
+         D:\OpenRV\src\lib\image\TwkFB\Operations.cpp(136,32): warning C4293: '>>': shift count negative or too big, undefined behavior [D:\OpenRV\_build\src\lib\image\TwkFB\TwkFB.vcxproj]
+         D:\OpenRV\src\lib\image\TwkFB\FrameBuffer.cpp(747,27): warning C4312: 'type cast': conversion from 'unsigned int' to 'TwkFB::FrameBuffer *' of greater size [D:\OpenRV\_build\src\lib\image\TwkFB\TwkFB.vcxproj]
+         D:\OpenRV\src\lib\image\TwkFB\FrameBuffer.cpp(748,23): warning C4312: 'type cast': conversion from 'unsigned int' to 'TwkFB::FrameBuffer *' of greater size [D:\OpenRV\_build\src\lib\image\TwkFB\TwkFB.vcxproj]
+         D:\OpenRV\src\lib\image\TwkFB\FrameBuffer.cpp(749,24): warning C4312: 'type cast': conversion from 'unsigned int' to 'TwkFB::FrameBuffer *' of greater size [D:\OpenRV\_build\src\lib\image\TwkFB\TwkFB.vcxproj]
+         D:\OpenRV\src\lib\image\TwkFB\FrameBuffer.cpp(750,18): warning C4312: 'type cast': conversion from 'unsigned int' to 'unsigned char *' of greater size [D:\OpenRV\_build\src\lib\image\TwkFB\TwkFB.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\makeFBIOformats\makeFBIOformats.vcxproj" (default target) (118) ->
+       "D:\OpenRV\_build\image_formats.vcxproj" (default target) (119) ->
+       "D:\OpenRV\_build\src\lib\image\io_jpeg\io_jpeg.vcxproj" (default target) (125) ->
+       "D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj" (default target) (235) ->
+         D:\OpenRV\src\pub\exif\libexif\exif-entry.h(1,1): warning C4828: The file contains a character starting at offset 0x48 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-entry.h(1,1): warning C4828: The file contains a character starting at offset 0x55 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-content.h(1,1): warning C4828: The file contains a character starting at offset 0x22 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-content.h(1,1): warning C4828: The file contains a character starting at offset 0x2f that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-tag.h(1,1): warning C4828: The file contains a character starting at offset 0x1e that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-tag.h(1,1): warning C4828: The file contains a character starting at offset 0x2b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-ifd.h(1,1): warning C4828: The file contains a character starting at offset 0x1e that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-ifd.h(1,1): warning C4828: The file contains a character starting at offset 0x2b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-data-type.h(1,1): warning C4828: The file contains a character starting at offset 0x23 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-data-type.h(1,1): warning C4828: The file contains a character starting at offset 0x30 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-entry.h(1,1): warning C4828: The file contains a character starting at offset 0x48 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-entry.h(1,1): warning C4828: The file contains a character starting at offset 0x55 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-data.h(1,1): warning C4828: The file contains a character starting at offset 0x47 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-byte-order.h(1,1): warning C4828: The file contains a character starting at offset 0x25 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-byte-order.h(1,1): warning C4828: The file contains a character starting at offset 0x32 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-log.h(1,1): warning C4828: The file contains a character starting at offset 0x4b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-log.h(1,1): warning C4828: The file contains a character starting at offset 0x58 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-mem.h(1,1): warning C4828: The file contains a character starting at offset 0xca that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-mem.h(1,1): warning C4828: The file contains a character starting at offset 0xd7 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-utils.h(1,1): warning C4828: The file contains a character starting at offset 0x20 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-utils.h(1,1): warning C4828: The file contains a character starting at offset 0x2d that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-format.h(1,1): warning C4828: The file contains a character starting at offset 0x21 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-format.h(1,1): warning C4828: The file contains a character starting at offset 0x2e that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-content.h(1,1): warning C4828: The file contains a character starting at offset 0x22 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-content.h(1,1): warning C4828: The file contains a character starting at offset 0x2f that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-mnote-data.h(1,1): warning C4828: The file contains a character starting at offset 0x25 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+         D:\OpenRV\src\pub\exif\libexif\exif-mnote-data.h(1,1): warning C4828: The file contains a character starting at offset 0x32 that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\image\IOjpeg\IOjpeg.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\makeFBIOformats\makeFBIOformats.vcxproj" (default target) (118) ->
+       "D:\OpenRV\_build\mu_plugins.vcxproj" (default target) (141) ->
+       "D:\OpenRV\_build\src\lib\mu\mu_glText\mu_glText.vcxproj" (default target) (145) ->
+       "D:\OpenRV\_build\src\lib\mu\MuGLText\MuGLText.vcxproj" (default target) (219) ->
+       "D:\OpenRV\_build\src\lib\ui\TwkGLText\TwkGLText.vcxproj" (default target) (221) ->
+       "D:\OpenRV\_build\src\lib\graphics\TwkGLF\TwkGLF.vcxproj" (default target) (222) ->
+         D:\OpenRV\src\lib\graphics\TwkGLF\GLVideoDevice.cpp(32,25): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size [D:\OpenRV\_build\src\lib\graphics\TwkGLF\TwkGLF.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables.vcxproj" (default target) (107) ->
+       "D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj" (default target) (116) ->
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(199,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(200,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(201,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(202,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(203,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(204,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(205,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(206,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(207,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(208,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(209,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(210,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(211,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(212,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(213,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(214,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(215,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(216,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(217,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+         D:\OpenRV\src\bin\apps\rvprof\VisMainWindow.cpp(218,41): warning C4838: conversion from '__int64' to 'long' requires a narrowing conversion [D:\OpenRV\_build\src\bin\apps\rvprof\rvprof.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\makeFBIOformats\makeFBIOformats.vcxproj" (default target) (118) ->
+       "D:\OpenRV\_build\mu_plugins.vcxproj" (default target) (141) ->
+       "D:\OpenRV\_build\src\lib\mu\mu_image\mu_image.vcxproj" (default target) (147) ->
+       "D:\OpenRV\_build\src\lib\mu\MuImage\MuImage.vcxproj" (default target) (224) ->
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x967b that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\mu\MuImage\MuImage.vcxproj]
+         D:\OpenRV\src\pub\cv\cvcompat.h(817,1): warning C4828: The file contains a character starting at offset 0x996c that is illegal in the current source character set (codepage 65001). [D:\OpenRV\_build\src\lib\mu\MuImage\MuImage.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\makeFBIOformats\makeFBIOformats.vcxproj" (default target) (118) ->
+       "D:\OpenRV\_build\mu_plugins.vcxproj" (default target) (141) ->
+       "D:\OpenRV\_build\src\lib\mu\mu_qt\mu_qt.vcxproj" (default target) (151) ->
+       "D:\OpenRV\_build\src\lib\mu\MuQt6\MuQt6.vcxproj" (default target) (241) ->
+       (Lib target) -> 
+         SignalSpy.obj : warning LNK4006: "public: static struct QMetaObject const Mu::SignalSpy::staticMetaObject" (?staticMetaObject@SignalSpy@Mu@@2UQMetaObject@@B) already defined in moc_SignalSpy.obj; second definition ignored [D:\OpenRV\_build\src\lib\mu\MuQt6\MuQt6.vcxproj]
+         SignalSpy.obj : warning LNK4006: "public: virtual struct QMetaObject const * __cdecl Mu::SignalSpy::metaObject(void)const " (?metaObject@SignalSpy@Mu@@UEBAPEBUQMetaObject@@XZ) already defined in moc_SignalSpy.obj; second definition ignored [D:\OpenRV\_build\src\lib\mu\MuQt6\MuQt6.vcxproj]
+         SignalSpy.obj : warning LNK4006: "public: virtual void * __cdecl Mu::SignalSpy::qt_metacast(char const *)" (?qt_metacast@SignalSpy@Mu@@UEAAPEAXPEBD@Z) already defined in moc_SignalSpy.obj; second definition ignored [D:\OpenRV\_build\src\lib\mu\MuQt6\MuQt6.vcxproj]
+         SignalSpy.obj : warning LNK4006: "public: virtual int __cdecl Mu::SignalSpy::qt_metacall(enum QMetaObject::Call,int,void * *)" (?qt_metacall@SignalSpy@Mu@@UEAAHW4Call@QMetaObject@@HPEAPEAX@Z) already defined in moc_SignalSpy.obj; second definition ignored [D:\OpenRV\_build\src\lib\mu\MuQt6\MuQt6.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\rvio\rvio.vcxproj" (default target) (165) ->
+       "D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj" (default target) (254) ->
+       "D:\OpenRV\_build\src\lib\ip\IPBaseNodes\IPBaseNodes.vcxproj" (default target) (255) ->
+       "D:\OpenRV\_build\src\lib\ip\IPCore\IPCore_autogen.vcxproj" (default target) (256) ->
+       "D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj" (default target) (258) ->
+       (ClCompile target) -> 
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         with [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         [ [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:             _Ty=int [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         ] [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         and [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         [ [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:             _Ty2=float [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         ] [D:\OpenRV\_build\src\lib\files\LUT\LUT.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\rvio\rvio.vcxproj" (default target) (165) ->
+       "D:\OpenRV\_build\src\lib\image\MovieRV_FBO\MovieRV_FBO.vcxproj" (default target) (265) ->
+       "D:\OpenRV\_build\src\lib\graphics\TwkGLFFBO\TwkGLFFBO.vcxproj" (default target) (268) ->
+         cl : command line  warning D9025: overriding '/DUNICODE' with '/UUNICODE' [D:\OpenRV\_build\src\lib\graphics\TwkGLFFBO\TwkGLFFBO.vcxproj]
+         cl : command line  warning D9025: overriding '/D_UNICODE' with '/U_UNICODE' [D:\OpenRV\_build\src\lib\graphics\TwkGLFFBO\TwkGLFFBO.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\rvio\rvio.vcxproj" (default target) (165) ->
+       "D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj" (default target) (254) ->
+         D:\OpenRV\src\lib\ip\IPCore\Session.cpp(5229,38): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'size_t' [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         D:\OpenRV\src\lib\ip\IPCore\Session.cpp(5253,38): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'size_t' [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:         with [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:         [ [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:             _Ty=int [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\numeric(37,26): warning C4267:         ] [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         D:\OpenRV\src\lib\ip\IPCore\IPImage.cpp(156,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'IPCore::IPImage *' of greater size [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         D:\OpenRV\src\lib\ip\IPCore\IPImage.cpp(157,16): warning C4312: 'type cast': conversion from 'unsigned int' to 'IPCore::IPImage *' of greater size [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         D:\OpenRV\src\lib\ip\IPCore\IPImage.cpp(159,14): warning C4312: 'type cast': conversion from 'unsigned int' to 'IPCore::IPImage::FrameBuffer *' of greater size [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         D:\OpenRV\src\lib\ip\IPCore\IPGraph.cpp(3576,34): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'size_t' [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         D:\OpenRV\src\lib\ip\IPCore\IPGraph.cpp(3599,34): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'size_t' [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\xutility(4711,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         with [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         [ [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:             _Ty=float [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         ] [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         and [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         [ [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:             _Ty2=int [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,54): warning C4244:         ] [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         with [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         [ [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:             _Ty=float [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         ] [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         and [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         [ [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:             _Ty1=int [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\utility(247,16): warning C4244:         ] [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\include\xutility(388,82): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data [D:\OpenRV\_build\src\lib\ip\IPCore\IPCore.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\rvio\rvio.vcxproj" (default target) (165) ->
+       "D:\OpenRV\_build\src\lib\image\MovieRV_FBO\MovieRV_FBO.vcxproj" (default target) (265) ->
+       "D:\OpenRV\_build\src\lib\app\RvApp\RvApp.vcxproj" (default target) (269) ->
+         D:\OpenRV\src\lib\app\RvApp\RvGraph.cpp(289,27): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'size_t' [D:\OpenRV\_build\src\lib\app\RvApp\RvApp.vcxproj]
+         D:\OpenRV\src\lib\app\RvApp\RvSession.cpp(2587,38): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'size_t' [D:\OpenRV\_build\src\lib\app\RvApp\RvApp.vcxproj]
+         D:\OpenRV\src\lib\app\RvApp\RvSession.cpp(2610,38): warning C4477: 'sprintf' : format string '%06d' requires an argument of type 'int', but variadic argument 1 has type 'size_t' [D:\OpenRV\_build\src\lib\app\RvApp\RvApp.vcxproj]
+
+
+       "D:\OpenRV\_build\main_executable.vcxproj" (default target) (1) ->
+       "D:\OpenRV\_build\src\bin\apps\rv\rv.vcxproj" (default target) (3) ->
+       "D:\OpenRV\_build\executables_with_plugins.vcxproj" (default target) (117) ->
+       "D:\OpenRV\_build\src\bin\imgtools\rvio\rvio.vcxproj" (default target) (165) ->
+       "D:\OpenRV\_build\src\lib\app\PyMediaLibrary\PyMediaLibrary.vcxproj" (default target) (270) ->
+         D:\OpenRV\src\lib\app\PyMediaLibrary\PyRootNode.cpp(74,56): warning C4805: '&=': unsafe mix of type 'bool' and type 'int' in operation [D:\OpenRV\_build\src\lib\app\PyMediaLibrary\PyMediaLibrary.vcxproj]
+         D:\OpenRV\src\lib\app\PyMediaLibrary\PyRootNode.cpp(74,56): warning C4805: '&': unsafe mix of type 'bool' and type 'int' in operation [D:\OpenRV\_build\src\lib\app\PyMediaLibrary\PyMediaLibrary.vcxproj]
+
+    7029 Warning(s)
+    0 Error(s)
+
+Time Elapsed 01:42:47.38
+

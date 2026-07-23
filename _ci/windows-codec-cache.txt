@@ -1,0 +1,7 @@
+RV_FFMPEG:STRING=8
+RV_FFMPEG_CONFIG_OPTIONS_CACHE:STRING=--disable-decoder=ac3;--disable-decoder=bink;--disable-decoder=binkaudio_dct;--disable-decoder=binkaudio_rdft;--disable-decoder=dvvideo;--disable-decoder=qtrle;--disable-decoder=vp9;--disable-decoder=vp9_cuvid;--disable-decoder=vp9_mediacodec;--disable-decoder=vp9_qsv;--disable-decoder=vp9_rkmpp;--disable-decoder=vp9_v4l2m2m;--disable-decoder=prores_raw;--disable-decoder=ac3_fixed;--disable-decoder=eac3;--disable-encoder=aac_mf;--disable-encoder=dvvideo;--disable-encoder=qtrle;--disable-encoder=vp9_qsv;--disable-encoder=vp9_vaapi;--disable-filter=geq;--disable-parser=vp9;--disable-protocol=ffrtmpcrypt;--disable-protocol=rtmpe;--disable-protocol=rtmpte
+RV_FFMPEG_NON_FREE_DECODERS_TO_ENABLE:UNINITIALIZED=hevc;aac;aac_at;aac_fixed;aac_latm;h264;prores;prores_aw;prores_ks;prores_lgpl;dnxhd
+RV_FFMPEG_NON_FREE_ENCODERS_TO_ENABLE:UNINITIALIZED=aac;prores;prores_aw;prores_ks;dnxhd
+RV_FFMPEG_USE_VIDEOTOOLBOX:BOOL=OFF
+//STRINGS property for variable: RV_FFMPEG
+RV_FFMPEG-STRINGS:INTERNAL=8
